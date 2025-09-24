@@ -12,10 +12,16 @@ public class Squad : MonoBehaviour
     [SerializeField] float maxSize;
     [SerializeField] float minSize;
     CameraZoomController zoomController;
+
+    [Header("Anim")]
+    Animator anim;
+    bool hasBorder;
+
     float lastRatio;
     void Start()
     {
         zoomController = Camera.main.GetComponentInParent<CameraZoomController>();
+        anim = squadApparence.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,5 +33,11 @@ public class Squad : MonoBehaviour
 
         float scale = Mathf.Lerp(minSize, maxSize, ratio);
         squadApparence.transform.localScale = new Vector3(scale, scale, scale);
+
+        //animation
+        if ((ratio > squadFactor && !hasBorder) || (ratio < squadFactor && hasBorder)) return;
+        hasBorder = !hasBorder;
+
+        anim.SetTrigger(hasBorder ? "Spawn" : "Delete");
     }
 }

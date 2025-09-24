@@ -4,7 +4,8 @@
 
 	public class CameraBillboard : MonoBehaviour
 	{
-		public Camera _camera;
+		[HideInInspector] public Camera _camera;
+		[SerializeField] bool onlyY;
 
 		public void Start()
 		{
@@ -14,6 +15,10 @@
 		void Update()
 		{
 			transform.LookAt(transform.position + _camera.transform.rotation * Vector3.forward, _camera.transform.rotation * Vector3.up);
+			if (onlyY)
+			{
+				transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+			}
 		}
 	}
 }
