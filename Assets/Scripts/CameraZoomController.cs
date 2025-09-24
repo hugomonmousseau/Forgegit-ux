@@ -11,15 +11,15 @@ public class CameraZoomController : MonoBehaviour
     [SerializeField] private float zoomSpeed = 10f;
     [SerializeField] private float zoomSmoothness = 5f;
 
-    [SerializeField] private float minZoomZ = -5f;
-    [SerializeField] private float maxZoomZ = -30f;
+    public float minZoomZ;
+    public float maxZoomZ;
 
     [Header("Pivot Rotation Settings")]
     [SerializeField] private float minPivotX = 30f;
     [SerializeField] private float maxPivotX = 75f;
 
     private float targetZoomZ;
-    private float currentZoomZ;
+    [HideInInspector] public float currentZoomZ;
 
     void Start()
     {
