@@ -4775,6 +4775,7 @@ GameObject:
   - component: {fileID: 6263981169409340946}
   - component: {fileID: 8145559161136071384}
   - component: {fileID: 8145559161136071385}
+  - component: {fileID: 8145559161136071386}
   m_Layer: 5
   m_Name: Kart
   m_TagString: Untagged
@@ -5084,6 +5085,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &8145559161136071386
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640966543112561421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abc31198843f30b44baf095dd913e199, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8197862551023206852
 GameObject:
   m_ObjectHideFlags: 0
