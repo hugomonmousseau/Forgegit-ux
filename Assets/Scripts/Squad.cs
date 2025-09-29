@@ -8,7 +8,7 @@ public class Squad : MonoBehaviour
     public float squadFactor;
 
     [Header("Apparence")]
-    [SerializeField] GameObject squadApparence;
+    public GameObject squadApparence;
     [SerializeField] float maxSize;
     [SerializeField] float minSize;
     CameraZoomController zoomController;
