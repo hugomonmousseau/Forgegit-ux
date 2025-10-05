@@ -21,7 +21,7 @@ public class Squad : MonoBehaviour
     void Start()
     {
         zoomController = Camera.main.GetComponentInParent<CameraZoomController>();
-        anim = squadApparence.GetComponent<Animator>();
+        //anim = squadApparence.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +38,6 @@ public class Squad : MonoBehaviour
         if ((ratio > squadFactor && !hasBorder) || (ratio < squadFactor && hasBorder)) return;
         hasBorder = !hasBorder;
 
-        anim.SetTrigger(hasBorder ? "Spawn" : "Delete");
+        //anim.SetTrigger(hasBorder ? "Spawn" : "Delete");
     }
 }
