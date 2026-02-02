@@ -9,7 +9,7 @@ public class LineRendererAuto : MonoBehaviour
     {
         lineRenderer = GetComponentInChildren<LineRenderer>();
         lineRenderer.SetPosition(0, GetComponent<Squad>().squadApparence.transform.position);
-        lineRenderer.SetPosition(1, new Vector3(transform.position.x, 1, transform.position.z));
+        lineRenderer.SetPosition(1, transform.position);
     }
 
     

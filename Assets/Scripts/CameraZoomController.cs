@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class CameraZoomController : MonoBehaviour
 {
+    public float scrollAnim;
     [Header("Camera & Pivot")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform pivotTransform;
@@ -19,7 +20,7 @@ public class CameraZoomController : MonoBehaviour
     [SerializeField] private float maxPivotX = 75f;
 
     private float targetZoomZ;
-    [HideInInspector] public float currentZoomZ;
+    public float currentZoomZ;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class CameraZoomController : MonoBehaviour
     void Update()
     {
         float scroll = Mouse.current.scroll.ReadValue().y;
+        if (scrollAnim != 0) scroll = scrollAnim;
         if (Mathf.Abs(scroll) > 0.01) Debug.Log(scroll + " " + scroll * zoomSpeed * Time.deltaTime);
 
         if (Mathf.Abs(scroll) > 0.01f)
